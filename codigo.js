@@ -6,7 +6,7 @@ var musicaFundo = new Audio('All Champion Battle Themes V4.mp3'); //Carrega a m�
 
 
 function Random() {
-	var numAleatorio = Math.floor(Math.random() * limite) + 1; //Entre 1 e limite inclusive
+	var numAleatorio = parseInt(Math.floor(Math.random() * limite) + 1); //Entre 1 e limite inclusive
 	console.log("random number: " + numAleatorio); //Coloca o número na consola
     return numAleatorio;
  }
@@ -19,7 +19,7 @@ function Random() {
 	musicaFundo.play(); //Play música
 	pedirNumMax(); //Pede o número máximo ao utilizador
 	numSecreto = Random();
-	vidas = 10; //Número de vidas
+	vidas = 2; //Número de vidas
 	tentativas = 0; //Número de tentativas
 	document.FGame.Output.value='Estou a pensar num numero entre 0 e ' + (limite) +'. Tenta adivinhar qual é?';
 	document.FGame.Tries.value=tentativas;
@@ -30,10 +30,15 @@ function Random() {
  
 function Game(numero) {
 	
-	console.log(numero);
-	console.log(numSecreto);
+	vidas--;
 	
-    if(numero === numSecreto) {
+	if (vidas==0) {
+		console.log("sem vidas");
+		//Código caso fique sem vidas
+		Init(); //Reinicia o jogo
+	}
+	
+    else if(numero==numSecreto) {
         tentativas++;
         document.FGame.Output.value='Acertaste em ' + tentativas + ' tentativas! Era o numero ' + numSecreto + '! Clica em Recomeçar para jogar outra vez';
         document.FGame.HighLow.value='Certoooooooooo!'; 
