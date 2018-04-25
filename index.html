@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>	
+	<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>Jogo do adivinha</title>
+        <script src="codigo.js" type="text/javascript" charset="utf-8"></script>
+        <link href="meuestilo.css" rel="stylesheet" type="text/css">
+    </head>
+
+<body>
+	<center>
+
+	<div id="pp">
+		<FORM NAME="FGame">
+			<h1>O Jogo do Adivinha</h1>
+			<h2>Área de mensagens:</h2>
+			<INPUT TYPE="txt" NAME="Output" VALUE="" Size="60"><br><br>
+			O número é <INPUT TYPE="txt" NAME="HighLow" VALUE='' Size="10"><br><br>
+			Nº de tentativas: <INPUT TYPE="txt" NAME="Tries"  VALUE="0" SIZE="2"> <br><br>	
+			<hr>
+			</div id="pp"> 
+			<div>
+			<br>
+			<INPUT TYPE="button" NAME="init" VALUE="1.    Iniciar / Re-iniciar    " OnClick="Init()"><br><br>
+		
+			2. Escreve o número do teu palpite:
+			<INPUT TYPE="txt" NAME="Input" VALUE='' Size="10"><br><br>
+			Podes usar este teclado para escrever o número:<br><br>
+			<INPUT class="botao" TYPE="button" NAME="one"  VALUE="  1  " OnClick="FGame.Input.value += 1">
+			<INPUT class="botao" TYPE="button" NAME="one"  VALUE="  2  " OnClick="FGame.Input.value += 2">
+			<INPUT class="botao" TYPE="button" NAME="one"  VALUE="  3  " OnClick="FGame.Input.value += 3"><br>
+			<INPUT class="botao" TYPE="button" NAME="one"  VALUE="  4  " OnClick="FGame.Input.value += 4">
+			<INPUT class="botao" TYPE="button" NAME="one"  VALUE="  5  " OnClick="FGame.Input.value += 5">
+			<INPUT class="botao" TYPE="button" NAME="one"  VALUE="  6  " OnClick="FGame.Input.value += 6"><br>
+			<INPUT class="botao" TYPE="button" NAME="one"  VALUE="  7  " OnClick="FGame.Input.value += 7">
+			<INPUT class="botao" TYPE="button" NAME="one"  VALUE="  8  " OnClick="FGame.Input.value += 8">
+			<INPUT class="botao" TYPE="button" NAME="one"  VALUE="  9  " OnClick="FGame.Input.value += 9"><br>
+			<INPUT class="botao" TYPE="button" NAME="one"  VALUE="  0  " OnClick="FGame.Input.value += 0"><br><br>
+		
+		<INPUT TYPE="button" NAME="DoIt" VALUE="3.    Verificar!    " OnClick="Game(FGame.Input.value); FGame.Input.value=''"><br><br>
+		</FORM>
+		</div>
+		<div id="sp">
+		<hr>
+		<h3>Instruções:</h3>
+		1. Clica em Iniciar/Re-iniciar<br>
+		2. Clica nos botões com os números ou escreve diretamente<br>
+		3. Clica em Verificar!<br>
+		4. Repete os passos 2 e 3 até acertares no número<br><br>
+		<hr>
+		</div id="sp">
+	</center>
+
+</body>
+
+</html>
